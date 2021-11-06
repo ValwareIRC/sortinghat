@@ -76,7 +76,22 @@ proc retrieveHouse(e: IrcEvent, text: string): string =
     return "Wizard has not been sorted into a house."
 
 proc retrieveWand(e: IrcEvent, text: string): string =
-  echo e.nick, ": ", text
+  let trimmedText = text.strip()
+  let lookupName =
+    if trimmedText.len > 0:
+      trimmedText.split(Whitespace)[0]
+    else:
+      e.nick
+    
+  let wizardInfo = getWizardByName(lookupName)
+  if wizardInfo == nil:
+    return fmt"No wizard by the name {lookupName} has been found."
+
+  if wizardInfo.fields.hasKey("wand"):
+    let wand = wizardInfo.fields["wand"]
+    return fmt"{lookupName}'s wand: {wand}."
+  else:
+    return "Wizard has not been assigned a wand."
 
 proc handleCommand(client: Irc, e: IrcEvent, message: string) =
   ## message:
@@ -99,7 +114,8 @@ proc handleCommand(client: Irc, e: IrcEvent, message: string) =
       let house = retrieveHouse(e, text)
       client.privmsg(e.origin, house)
     of cmdWand:
-      discard retrieveWand(e, text)
+      let wand = retrieveWand(e, text)
+      client.privmsg(e.origin, wand)
 
 when isMainModule:
   # TODO: Can make this all async probably.
@@ -109,7 +125,7 @@ when isMainModule:
   echo "LOADED ", wizardLookup.len, " WIZARDS"
 
   let client = newIrc(
-    "irc.irc-nerds.net",
+    getEnv("IRC_ADDRESS", "irc.irc-nerds.net"),
     port = Port(6697),
     useSsl = true,
     nick = getEnv("IRC_NICK", "SortingHat"),
