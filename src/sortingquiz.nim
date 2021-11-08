@@ -2,7 +2,11 @@ import
   json,
   tables,
   strformat,
+  strutils,
   random
+
+import houses
+export houses
 
 randomize()
 
@@ -18,13 +22,18 @@ type
   Quiz = object
     questions: seq[QuestionGroup]
   
-  Points = object
+  Points = ref object
     Gryffindor: float
-    Ravenclaw: float
     Hufflepuff: float
+    Ravenclaw: float
     Slytherin: float
-
   Answers = Table[string, Points]
+
+proc `+=`(p1, p2: Points) =
+  p1.Gryffindor = p1.Gryffindor + p2.Gryffindor
+  p1.Hufflepuff = p1.Hufflepuff + p2.Hufflepuff
+  p1.Ravenclaw = p1.Ravenclaw + p2.Ravenclaw
+  p1.Slytherin = p1.Slytherin + p2.Slytherin
 
 let
   questionsJson = parseJson(questionsRaw)
@@ -42,17 +51,38 @@ type
 proc newHouseQuiz(): QuizSession =
   QuizSession(
     quiz: houseQuiz,
-    currentQuestionIndex: -1
+    currentQuestionIndex: -1,
+    points: Points()
   )
+
+template isFinished*(session: QuizSession): bool =
+  session.currentQuestionGroupIndex > session.quiz.questions.high
+
+proc determineHouse*(session: QuizSession): House =
+  let maxScore = max(@[
+    session.points.Gryffindor,
+    session.points.Gryffindor,
+    session.points.Gryffindor,
+    session.points.Gryffindor
+  ])
+
+  if maxScore == session.points.Gryffindor:
+    return Gryffindor
+  elif maxScore == session.points.Hufflepuff:
+    return Hufflepuff
+  elif maxScore == session.points.Ravenclaw:
+    return Ravenclaw
+  elif maxScore == session.points.Slytherin:
+    return Slytherin
 
 proc getCurrentQuestionGroup(session: QuizSession): QuestionGroup =
   return session.quiz.questions[session.currentQuestionGroupIndex]
 
 proc getCurrentQuestion(session: QuizSession): Question =
-  if session.currentQuestionGroupIndex > session.quiz.questions.high:
+  if session.isFinished:
     raise newException(Exception, "There are no more questions in the quiz.")
 
-  let group = session.quiz.questions[session.currentQuestionGroupIndex]
+  let group = session.getCurrentQuestionGroup()
   if session.currentQuestionIndex < 0:
     session.currentQuestionIndex = rand(group.high)
   return group[session.currentQuestionIndex]
@@ -60,6 +90,9 @@ proc getCurrentQuestion(session: QuizSession): Question =
 proc answerCurrentQuestion(session: QuizSession, answerIndex: int) =
   ## Answers the current question,
   ## and proceeds to the next question group.
+  if session.isFinished:
+    raise newException(Exception, "There are no more questions in the quiz.")
+
   if session.currentQuestionIndex < 0:
     raise newException(Exception, "There is not a current question to answer.")
 
@@ -68,8 +101,15 @@ proc answerCurrentQuestion(session: QuizSession, answerIndex: int) =
     raise newException(Exception, fmt"Answer index out of range - must be from 0 to {answers.high}.")
   
   let answer = answers[answerIndex]
-  # TODO: How to lookup the answer in pointsLookup?
-  # Keys in pointsLookup start with the full answers.
+  var answered = false
+  for (key, points) in pointsLookup.pairs():
+    if answer.startsWith(key):
+      session.points += points
+      answered = true
+      break
+
+  if not answered:
+    raise newException(Exception, "Quiz error - Answer was not found. Please report this issue.")
 
   # Move on to the next group.
   inc session.currentQuestionGroupIndex
@@ -78,7 +118,12 @@ proc answerCurrentQuestion(session: QuizSession, answerIndex: int) =
 
 when isMainModule:
   let session = newHouseQuiz()
-  echo session.getCurrentQuestion()
-  echo session.getCurrentQuestion()
-  echo session.getCurrentQuestion()
+  while not session.isFinished:
+    let question = session.getCurrentQuestion()
+    echo question.question
+    echo question.answers
+    session.answerCurrentQuestion(0)
+    echo ""
+
+  echo session.determineHouse()
 
