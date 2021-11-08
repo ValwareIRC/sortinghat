@@ -1,7 +1,10 @@
 import
   irc,
+  re,
   ansi,
-  wizardinfo
+  wizardinfo,
+  quizsessions,
+  sortingquiz
 
 import
   os,
@@ -10,14 +13,14 @@ import
   strutils,
   strformat
 
-randomize()
-
 const helpText = [
   fmt"{clrOrange}Commands:",
-  # fmt"{clrRed}!quiz [house | wand | patronus] {clrDefault}(Take a quiz),",
+  fmt"{clrRed}!quiz house {clrDefault}(Take a quiz),",
   fmt"{clrRed}!house [name] {clrDefault}(Get the house of yourself or another wizard),",
   fmt"{clrRed}!wand [name] {clrDefault}(Get the wand of yourself or another wizard),",
 ].join(" ")
+
+let regexSingleNumber = re"^[0-9]$"
 
 var authPass: string
 
@@ -26,13 +29,15 @@ type
   Commands = enum
     cmdNone,
     cmdHelp,
-    # cmdQuiz
+    cmdQuiz
     cmdHouse
     cmdWand
 
 proc determineCommand(str: string): Commands
 proc handleCommand(client: Irc, e: IrcEvent, message: string)
 proc handleMsg(client: Irc, e: IrcEvent)
+
+proc answerQuizQuestion(client: Irc, e: IrcEvent, index: int)
 
 proc handleMsg(client: Irc, e: IrcEvent) =
   echo e.raw
@@ -43,13 +48,16 @@ proc handleMsg(client: Irc, e: IrcEvent) =
     let message = e.text
     if message.startsWith('!'):
       client.handleCommand(e, message)
+    elif message.match(regexSingleNumber):
+      # User may be answering a quiz question.
+      answerQuizQuestion(client, e, parseInt(message) - 1)
 
 proc determineCommand(str: string): Commands =
   case str:
     of "help", "commands", "h":
       cmdHelp
-    # of "quiz":
-    #   cmdQuiz
+    of "quiz":
+      cmdQuiz
     of "house":
       cmdHouse
     of "wand":
@@ -93,6 +101,33 @@ proc retrieveWand(e: IrcEvent, text: string): string =
   else:
     return "Wizard has not been assigned a wand."
 
+proc sendNextQuizQuestion(client: Irc, e: IrcEvent, nick: string) =
+  let session = getSession(nick)
+  let question = session.getCurrentQuestion()
+  client.privmsg(e.origin, fmt"{nick}: {clrYellow}{question.question}")
+  for i, answer in question.answers:
+    client.privmsg(e.origin, fmt"{clrYellow}[{i + 1}] {clrDefault}{answer}")
+
+proc handleQuiz(client: Irc, e: IrcEvent, text: string) =
+  try:
+    startHouseQuiz(e.nick)
+    sendNextQuizQuestion(client, e, e.nick)
+  except Exception as err:
+    client.privmsg(e.origin, fmt"{clrRed}{err.msg}")
+
+proc answerQuizQuestion(client: Irc, e: IrcEvent, index: int) =
+  try:
+    let session = getSession(e.nick)
+    if session != nil:
+      session.answerCurrentQuestion(index)
+      if session.isFinished:
+        client.privmsg(e.origin, fmt"{e.nick} has been placed in House {$session.determineHouse()}!")
+        closeQuiz(e.nick)
+      else:
+        client.sendNextQuizQuestion(e, e.nick)
+  except Exception as err:
+    client.privmsg(e.origin, fmt"{clrRed}{err.msg}")
+
 proc handleCommand(client: Irc, e: IrcEvent, message: string) =
   ## message:
   ##   The message to parse, e.g. !gh foobar
@@ -107,9 +142,8 @@ proc handleCommand(client: Irc, e: IrcEvent, message: string) =
       discard
     of cmdHelp:
       client.privmsg(e.origin, helpText)
-    # of cmdQuiz:
-    #   # TODO:
-    #   discard
+    of cmdQuiz:
+      client.handleQuiz(e, text)
     of cmdHouse:
       let house = retrieveHouse(e, text)
       client.privmsg(e.origin, house)
@@ -129,7 +163,7 @@ when isMainModule:
     port = Port(6697),
     useSsl = true,
     nick = getEnv("IRC_NICK", "SortingHat"),
-    joinChans = @["#testing"]
+    joinChans = @["#Hogwarts", "#testing"]
   )
   client.connect()
 

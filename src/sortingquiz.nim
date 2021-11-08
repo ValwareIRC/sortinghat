@@ -16,11 +16,11 @@ const
 
 type
   Question* = object
-    question: string
-    answers: seq[string]
+    question*: string
+    answers*: seq[string]
   QuestionGroup = seq[Question]
   Quiz = object
-    questions: seq[QuestionGroup]
+    questions*: seq[QuestionGroup]
   
   Points = ref object
     Gryffindor: float
@@ -43,12 +43,12 @@ let
 
 type
   QuizSession* = ref object
-    quiz: Quiz
+    quiz*: Quiz
     currentQuestionGroupIndex: int
     currentQuestionIndex: int
     points: Points
 
-proc newHouseQuiz(): QuizSession =
+proc newHouseQuiz*(): QuizSession =
   QuizSession(
     quiz: houseQuiz,
     currentQuestionIndex: -1,
@@ -61,9 +61,9 @@ template isFinished*(session: QuizSession): bool =
 proc determineHouse*(session: QuizSession): House =
   let maxScore = max(@[
     session.points.Gryffindor,
-    session.points.Gryffindor,
-    session.points.Gryffindor,
-    session.points.Gryffindor
+    session.points.Hufflepuff,
+    session.points.Ravenclaw,
+    session.points.Slytherin
   ])
 
   if maxScore == session.points.Gryffindor:
@@ -78,7 +78,7 @@ proc determineHouse*(session: QuizSession): House =
 proc getCurrentQuestionGroup(session: QuizSession): QuestionGroup =
   return session.quiz.questions[session.currentQuestionGroupIndex]
 
-proc getCurrentQuestion(session: QuizSession): Question =
+proc getCurrentQuestion*(session: QuizSession): Question =
   if session.isFinished:
     raise newException(Exception, "There are no more questions in the quiz.")
 
@@ -87,7 +87,7 @@ proc getCurrentQuestion(session: QuizSession): Question =
     session.currentQuestionIndex = rand(group.high)
   return group[session.currentQuestionIndex]
 
-proc answerCurrentQuestion(session: QuizSession, answerIndex: int) =
+proc answerCurrentQuestion*(session: QuizSession, answerIndex: int) =
   ## Answers the current question,
   ## and proceeds to the next question group.
   if session.isFinished:
