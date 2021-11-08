@@ -1,0 +1,746 @@
+{
+  "Dawn": {
+    "Gryffindor": 100,
+    "Ravenclaw": 100,
+    "Hufflepuff": 0,
+    "Slytherin": 0
+  },
+  "Dusk": {
+    "Gryffindor": 0,
+    "Ravenclaw": 0,
+    "Hufflepuff": 100,
+    "Slytherin": 100
+  },
+  "Forest": {
+    "Gryffindor": 100,
+    "Ravenclaw": 100,
+    "Hufflepuff": 0,
+    "Slytherin": 0
+  },
+  "River": {
+    "Gryffindor": 0,
+    "Ravenclaw": 0,
+    "Hufflepuff": 100,
+    "Slytherin": 100
+  },
+  "Moon": {
+    "Gryffindor": 0,
+    "Ravenclaw": 100,
+    "Hufflepuff": 0,
+    "Slytherin": 100
+  },
+  "Stars": {
+    "Gryffindor": 100,
+    "Ravenclaw": 0,
+    "Hufflepuff": 100,
+    "Slytherin": 0
+  },
+  "The small tortoiseshell box": {
+    "Gryffindor": 0,
+    "Ravenclaw": 0,
+    "Hufflepuff": 100,
+    "Slytherin": 0
+  },
+  "The gleaming jet black box": {
+    "Gryffindor": 0,
+    "Ravenclaw": 0,
+    "Hufflepuff": 0,
+    "Slytherin": 100
+  },
+  "The ornate golden caske": {
+    "Gryffindor": 0,
+    "Ravenclaw": 100,
+    "Hufflepuff": 0,
+    "Slytherin": 0
+  },
+  "The small pewter box": {
+    "Gryffindor": 100,
+    "Ravenclaw": 0,
+    "Hufflepuff": 0,
+    "Slytherin": 0
+  },
+  "Attempt to confuse the troll": {
+    "Gryffindor": 0,
+    "Ravenclaw": 100,
+    "Hufflepuff": 0,
+    "Slytherin": 0
+  },
+  "Suggest drawing lots": {
+    "Gryffindor": 0,
+    "Ravenclaw": 0,
+    "Hufflepuff": 100,
+    "Slytherin": 0
+  },
+  "Suggest that all three of you should fight": {
+    "Gryffindor": 0,
+    "Ravenclaw": 0,
+    "Hufflepuff": 0,
+    "Slytherin": 100
+  },
+  "Volunteer to fight?": {
+    "Gryffindor": 100,
+    "Ravenclaw": 0,
+    "Hufflepuff": 0,
+    "Slytherin": 0
+  },
+  "A crackling log fire": {
+    "Gryffindor": 100,
+    "Ravenclaw": 0,
+    "Hufflepuff": 0,
+    "Slytherin": 0
+  },
+  "The sea": {
+    "Gryffindor": 0,
+    "Ravenclaw": 0,
+    "Hufflepuff": 0,
+    "Slytherin": 100
+  },
+  "Fresh parchment": {
+    "Gryffindor": 0,
+    "Ravenclaw": 100,
+    "Hufflepuff": 0,
+    "Slytherin": 0
+  },
+  "Home": {
+    "Gryffindor": 0,
+    "Ravenclaw": 0,
+    "Hufflepuff": 100,
+    "Slytherin": 0
+  },
+  "Lie and say you don’t know": {
+    "Gryffindor": 0,
+    "Ravenclaw": 0,
+    "Hufflepuff": 100,
+    "Slytherin": 0
+  },
+  "Tell Professor Flitwick that he ought to ask your classmate": {
+    "Gryffindor": 100,
+    "Ravenclaw": 0,
+    "Hufflepuff": 0,
+    "Slytherin": 0
+  },
+  "Tell Professor Flitwick the truth.": {
+    "Gryffindor": 0,
+    "Ravenclaw": 100,
+    "Hufflepuff": 0,
+    "Slytherin": 0
+  },
+  "You would not wait to be asked to tell Professor Flitwick the truth": {
+    "Gryffindor": 0,
+    "Ravenclaw": 0,
+    "Hufflepuff": 0,
+    "Slytherin": 100
+  },
+  "Hunger": {
+    "Gryffindor": 0,
+    "Ravenclaw": 100,
+    "Hufflepuff": 100,
+    "Slytherin": 0
+  },
+  "Cold": {
+    "Gryffindor": 0,
+    "Ravenclaw": 0,
+    "Hufflepuff": 100,
+    "Slytherin": 100
+  },
+  "Loneliness": {
+    "Gryffindor": 100,
+    "Ravenclaw": 0,
+    "Hufflepuff": 100,
+    "Slytherin": 0
+  },
+  "Boredom": {
+    "Gryffindor": 100,
+    "Ravenclaw": 0,
+    "Hufflepuff": 0,
+    "Slytherin": 100
+  },
+  "Being ignored": {
+    "Gryffindor": 0,
+    "Ravenclaw": 100,
+    "Hufflepuff": 0,
+    "Slytherin": 100
+  },
+  "The silver leafed tree bearing golden apples": {
+    "Gryffindor": 0,
+    "Ravenclaw": 100,
+    "Hufflepuff": 0,
+    "Slytherin": 0
+  },
+  "The fat red toadstools": {
+    "Gryffindor": 0,
+    "Ravenclaw": 0,
+    "Hufflepuff": 100,
+    "Slytherin": 0
+  },
+  "The bubbling pool": {
+    "Gryffindor": 0,
+    "Ravenclaw": 0,
+    "Hufflepuff": 0,
+    "Slytherin": 100
+  },
+  "The statue of an old wizard with a strangely twinkling eye": {
+    "Gryffindor": 100,
+    "Ravenclaw": 0,
+    "Hufflepuff": 0,
+    "Slytherin": 0
+  },
+  "The foaming, frothing, silvery liquid": {
+    "Gryffindor": 0,
+    "Ravenclaw": 100,
+    "Hufflepuff": 0,
+    "Slytherin": 0
+  },
+  "The smooth, thick, richly purple drink": {
+    "Gryffindor": 0,
+    "Ravenclaw": 0,
+    "Hufflepuff": 100,
+    "Slytherin": 0
+  },
+  "The golden liquid so bright that it hurts the eye": {
+    "Gryffindor": 100,
+    "Ravenclaw": 0,
+    "Hufflepuff": 0,
+    "Slytherin": 0
+  },
+  "The mysterious black liquid that gleams like ink": {
+    "Gryffindor": 0,
+    "Ravenclaw": 0,
+    "Hufflepuff": 0,
+    "Slytherin": 100
+  },
+  "The violin": {
+    "Gryffindor": 0,
+    "Ravenclaw": 0,
+    "Hufflepuff": 0,
+    "Slytherin": 100
+  },
+  "The trumpet": {
+    "Gryffindor": 0,
+    "Ravenclaw": 0,
+    "Hufflepuff": 100,
+    "Slytherin": 0
+  },
+  "The piano": {
+    "Gryffindor": 0,
+    "Ravenclaw": 100,
+    "Hufflepuff": 0,
+    "Slytherin": 0
+  },
+  "The drum": {
+    "Gryffindor": 100,
+    "Ravenclaw": 0,
+    "Hufflepuff": 0,
+    "Slytherin": 0
+  },
+  "Ordinary": {
+    "Gryffindor": 0,
+    "Ravenclaw": 0,
+    "Hufflepuff": 0,
+    "Slytherin": 100
+  },
+  "Ignorant": {
+    "Gryffindor": 0,
+    "Ravenclaw": 100,
+    "Hufflepuff": 0,
+    "Slytherin": 0
+  },
+  "Cowardly": {
+    "Gryffindor": 100,
+    "Ravenclaw": 0,
+    "Hufflepuff": 0,
+    "Slytherin": 0
+  },
+  "Selfish": {
+    "Gryffindor": 0,
+    "Ravenclaw": 0,
+    "Hufflepuff": 100,
+    "Slytherin": 0
+  },
+  "Miss you, but smile": {
+    "Gryffindor": 0,
+    "Ravenclaw": 0,
+    "Hufflepuff": 100,
+    "Slytherin": 0
+  },
+  "Ask for more stories about your adventures": {
+    "Gryffindor": 100,
+    "Ravenclaw": 0,
+    "Hufflepuff": 0,
+    "Slytherin": 0
+  },
+  "Think with admiration of your achievements": {
+    "Gryffindor": 0,
+    "Ravenclaw": 100,
+    "Hufflepuff": 0,
+    "Slytherin": 0
+  },
+  "I don't care what people think of me after I'm dead": {
+    "Gryffindor": 0,
+    "Ravenclaw": 0,
+    "Hufflepuff": 0,
+    "Slytherin": 100
+  },
+  "The Wise": {
+    "Gryffindor": 0,
+    "Ravenclaw": 100,
+    "Hufflepuff": 0,
+    "Slytherin": 0
+  },
+  "The Good": {
+    "Gryffindor": 0,
+    "Ravenclaw": 0,
+    "Hufflepuff": 100,
+    "Slytherin": 0
+  },
+  "The Great": {
+    "Gryffindor": 0,
+    "Ravenclaw": 0,
+    "Hufflepuff": 0,
+    "Slytherin": 100
+  },
+  "The Bold": {
+    "Gryffindor": 100,
+    "Ravenclaw": 0,
+    "Hufflepuff": 0,
+    "Slytherin": 0
+  },
+  "Ask what makes them think so?": {
+    "Gryffindor": 0,
+    "Ravenclaw": 100,
+    "Hufflepuff": 0,
+    "Slytherin": 0
+  },
+  "Agree, and ask whether they’d like a free sample of a jinx?": {
+    "Gryffindor": 0,
+    "Ravenclaw": 0,
+    "Hufflepuff": 0,
+    "Slytherin": 100
+  },
+  "Agree, and walk away, leaving them to wonder whether you are bluffing?": {
+    "Gryffindor": 100,
+    "Ravenclaw": 0,
+    "Hufflepuff": 0,
+    "Slytherin": 0
+  },
+  "Worried about their mental health, and offer to call a doctor.": {
+    "Gryffindor": 0,
+    "Ravenclaw": 0,
+    "Hufflepuff": 100,
+    "Slytherin": 0
+  },
+  "Standing on top of something very high": {
+    "Gryffindor": 0,
+    "Ravenclaw": 100,
+    "Hufflepuff": 0,
+    "Slytherin": 0
+  },
+  "An eye at the keyhole": {
+    "Gryffindor": 100,
+    "Ravenclaw": 0,
+    "Hufflepuff": 0,
+    "Slytherin": 0
+  },
+  "Neither your friends nor your family have any idea who you are.": {
+    "Gryffindor": 0,
+    "Ravenclaw": 0,
+    "Hufflepuff": 100,
+    "Slytherin": 0
+  },
+  "Being forced to speak in such a silly voice": {
+    "Gryffindor": 0,
+    "Ravenclaw": 0,
+    "Hufflepuff": 0,
+    "Slytherin": 100
+  },
+  "Tabby cat": {
+    "Gryffindor": 50,
+    "Ravenclaw": 0,
+    "Hufflepuff": 0,
+    "Slytherin": 50
+  },
+  "Siamese cat": {
+    "Gryffindor": 25,
+    "Ravenclaw": 0,
+    "Hufflepuff": 0,
+    "Slytherin": 100
+  },
+  "Ginger cat": {
+    "Gryffindor": 25,
+    "Ravenclaw": 0,
+    "Hufflepuff": 0,
+    "Slytherin": 100
+  },
+  "Black cat": {
+    "Gryffindor": 25,
+    "Ravenclaw": 0,
+    "Hufflepuff": 0,
+    "Slytherin": 100
+  },
+  "White cat": {
+    "Gryffindor": 25,
+    "Ravenclaw": 0,
+    "Hufflepuff": 0,
+    "Slytherin": 100
+  },
+  "Tawny owl": {
+    "Gryffindor": 25,
+    "Ravenclaw": 100,
+    "Hufflepuff": 0,
+    "Slytherin": 0
+  },
+  "Screech owl": {
+    "Gryffindor": 25,
+    "Ravenclaw": 100,
+    "Hufflepuff": 0,
+    "Slytherin": 0
+  },
+  "Brown owl": {
+    "Gryffindor": 25,
+    "Ravenclaw": 100,
+    "Hufflepuff": 0,
+    "Slytherin": 0
+  },
+  "Snowy owl": {
+    "Gryffindor": 25,
+    "Ravenclaw": 50,
+    "Hufflepuff": 50,
+    "Slytherin": 0
+  },
+  "Barn owl": {
+    "Gryffindor": 25,
+    "Ravenclaw": 100,
+    "Hufflepuff": 0,
+    "Slytherin": 0
+  },
+  "Common toad": {
+    "Gryffindor": 25,
+    "Ravenclaw": 0,
+    "Hufflepuff": 100,
+    "Slytherin": 0
+  },
+  "Natterjack toad": {
+    "Gryffindor": 25,
+    "Ravenclaw": 0,
+    "Hufflepuff": 100,
+    "Slytherin": 0
+  },
+  "Dragon toad": {
+    "Gryffindor": 50,
+    "Ravenclaw": 0,
+    "Hufflepuff": 50,
+    "Slytherin": 0
+  },
+  "Harlequin toad": {
+    "Gryffindor": 25,
+    "Ravenclaw": 0,
+    "Hufflepuff": 100,
+    "Slytherin": 0
+  },
+  "Three toed tree toad": {
+    "Gryffindor": 25,
+    "Ravenclaw": 50,
+    "Hufflepuff": 50,
+    "Slytherin": 0
+  },
+  "Love?": {
+    "Gryffindor": 0,
+    "Ravenclaw": 0,
+    "Hufflepuff": 100,
+    "Slytherin": 0
+  },
+  "Glory?": {
+    "Gryffindor": 100,
+    "Ravenclaw": 0,
+    "Hufflepuff": 0,
+    "Slytherin": 0
+  },
+  "Wisdom?": {
+    "Gryffindor": 0,
+    "Ravenclaw": 100,
+    "Hufflepuff": 0,
+    "Slytherin": 0
+  },
+  "Power?": {
+    "Gryffindor": 0,
+    "Ravenclaw": 0,
+    "Hufflepuff": 0,
+    "Slytherin": 100
+  },
+  "The power to read minds": {
+    "Gryffindor": 0,
+    "Ravenclaw": 100,
+    "Hufflepuff": 0,
+    "Slytherin": 100
+  },
+  "The power of invisibility": {
+    "Gryffindor": 100,
+    "Ravenclaw": 0,
+    "Hufflepuff": 50,
+    "Slytherin": 0
+  },
+  "The power of superhuman strength": {
+    "Gryffindor": 0,
+    "Ravenclaw": 0,
+    "Hufflepuff": 100,
+    "Slytherin": 50
+  },
+  "The power to speak to animals": {
+    "Gryffindor": 0,
+    "Ravenclaw": 100,
+    "Hufflepuff": 100,
+    "Slytherin": 0
+  },
+  "The power to change the past": {
+    "Gryffindor": 50,
+    "Ravenclaw": 0,
+    "Hufflepuff": 0,
+    "Slytherin": 100
+  },
+  "The power to change your appearance at will": {
+    "Gryffindor": 50,
+    "Ravenclaw": 100,
+    "Hufflepuff": 0,
+    "Slytherin": 0
+  },
+  "The wide, sunny, grassy lane": {
+    "Gryffindor": 0,
+    "Ravenclaw": 0,
+    "Hufflepuff": 100,
+    "Slytherin": 0
+  },
+  "The narrow, dark, lantern-lit alley": {
+    "Gryffindor": 0,
+    "Ravenclaw": 0,
+    "Hufflepuff": 0,
+    "Slytherin": 100
+  },
+  "The twisting, leaf-strewn path through woods": {
+    "Gryffindor": 100,
+    "Ravenclaw": 0,
+    "Hufflepuff": 0,
+    "Slytherin": 0
+  },
+  "The cobbled street lined with ancient buildings": {
+    "Gryffindor": 0,
+    "Ravenclaw": 100,
+    "Hufflepuff": 0,
+    "Slytherin": 0
+  },
+  "Proceed with caution": {
+    "Gryffindor": 0,
+    "Ravenclaw": 0,
+    "Hufflepuff": 100,
+    "Slytherin": 0
+  },
+  "Draw your wand and try to discover the source of the noise?": {
+    "Gryffindor": 100,
+    "Ravenclaw": 0,
+    "Hufflepuff": 0,
+    "Slytherin": 0
+  },
+  "Draw your wand and stand your ground?": {
+    "Gryffindor": 0,
+    "Ravenclaw": 0,
+    "Hufflepuff": 0,
+    "Slytherin": 100
+  },
+  "Withdraw into the shadows to await developments": {
+    "Gryffindor": 0,
+    "Ravenclaw": 100,
+    "Hufflepuff": 0,
+    "Slytherin": 0
+  },
+  "Apparition and Disapparition": {
+    "Gryffindor": 100,
+    "Ravenclaw": 0,
+    "Hufflepuff": 0,
+    "Slytherin": 100
+  },
+  "Transfiguration": {
+    "Gryffindor": 0,
+    "Ravenclaw": 100,
+    "Hufflepuff": 0,
+    "Slytherin": 0
+  },
+  "Flying on a broomstick": {
+    "Gryffindor": 100,
+    "Ravenclaw": 0,
+    "Hufflepuff": 100,
+    "Slytherin": 0
+  },
+  "Hexes and jinxes": {
+    "Gryffindor": 0,
+    "Ravenclaw": 0,
+    "Hufflepuff": 0,
+    "Slytherin": 100
+  },
+  "All about magical creatures, and how to befriend/care for them": {
+    "Gryffindor": 0,
+    "Ravenclaw": 0,
+    "Hufflepuff": 100,
+    "Slytherin": 0
+  },
+  "Secrets about the castle": {
+    "Gryffindor": 100,
+    "Ravenclaw": 0,
+    "Hufflepuff": 0,
+    "Slytherin": 0
+  },
+  "Every area of magic I can": {
+    "Gryffindor": 0,
+    "Ravenclaw": 100,
+    "Hufflepuff": 0,
+    "Slytherin": 0
+  },
+  "Centaurs": {
+    "Gryffindor": 100,
+    "Ravenclaw": 100,
+    "Hufflepuff": 0,
+    "Slytherin": 0
+  },
+  "Goblins": {
+    "Gryffindor": 0,
+    "Ravenclaw": 100,
+    "Hufflepuff": 0,
+    "Slytherin": 50
+  },
+  "Merpeople": {
+    "Gryffindor": 0,
+    "Ravenclaw": 0,
+    "Hufflepuff": 100,
+    "Slytherin": 100
+  },
+  "Ghosts": {
+    "Gryffindor": 100,
+    "Ravenclaw": 100,
+    "Hufflepuff": 0,
+    "Slytherin": 0
+  },
+  "Vampires": {
+    "Gryffindor": 0,
+    "Ravenclaw": 0,
+    "Hufflepuff": 0,
+    "Slytherin": 100
+  },
+  "Werewolves": {
+    "Gryffindor": 100,
+    "Ravenclaw": 0,
+    "Hufflepuff": 100,
+    "Slytherin": 0
+  },
+  "Trolls": {
+    "Gryffindor": 0,
+    "Ravenclaw": 0,
+    "Hufflepuff": 100,
+    "Slytherin": 100
+  },
+  "First, cure. Then student records. Finally, runes.": {
+    "Gryffindor": 100,
+    "Ravenclaw": 0,
+    "Hufflepuff": 100,
+    "Slytherin": 0
+  },
+  "First, student records. Then runes. Finally, cure.": {
+    "Gryffindor": 0,
+    "Ravenclaw": 0,
+    "Hufflepuff": 0,
+    "Slytherin": 100
+  },
+  "First, runes. Then cure. Finally, student records.": {
+    "Gryffindor": 0,
+    "Ravenclaw": 100,
+    "Hufflepuff": 0,
+    "Slytherin": 0
+  },
+  "First, cure. Then runes. Finally, student records.": {
+    "Gryffindor": 100,
+    "Ravenclaw": 0,
+    "Hufflepuff": 0,
+    "Slytherin": 0
+  },
+  "First student records. Then, cure. Finally, runes.": {
+    "Gryffindor": 0,
+    "Ravenclaw": 0,
+    "Hufflepuff": 100,
+    "Slytherin": 0
+  },
+  "First,  runes. Then student records. Finally, cure. ": {
+    "Gryffindor": 0,
+    "Ravenclaw": 100,
+    "Hufflepuff": 0,
+    "Slytherin": 100
+  },
+  "Envied?": {
+    "Gryffindor": 0,
+    "Ravenclaw": 100,
+    "Hufflepuff": 0,
+    "Slytherin": 100
+  },
+  "Imitated?": {
+    "Gryffindor": 0,
+    "Ravenclaw": 100,
+    "Hufflepuff": 0,
+    "Slytherin": 0
+  },
+  "Trusted?": {
+    "Gryffindor": 100,
+    "Ravenclaw": 0,
+    "Hufflepuff": 100,
+    "Slytherin": 0
+  },
+  "Praised?": {
+    "Gryffindor": 100,
+    "Ravenclaw": 0,
+    "Hufflepuff": 0,
+    "Slytherin": 50
+  },
+  "Liked?": {
+    "Gryffindor": 0,
+    "Ravenclaw": 0,
+    "Hufflepuff": 100,
+    "Slytherin": 0
+  },
+  "Feared?": {
+    "Gryffindor": 0,
+    "Ravenclaw": 0,
+    "Hufflepuff": 0,
+    "Slytherin": 100
+  },
+  "Black": {
+    "Gryffindor": 100,
+    "Ravenclaw": 0,
+    "Hufflepuff": 0,
+    "Slytherin": 100
+  },
+  "White": {
+    "Gryffindor": 0,
+    "Ravenclaw": 100,
+    "Hufflepuff": 100,
+    "Slytherin": 0
+  },
+  "Heads": {
+    "Gryffindor": 0,
+    "Ravenclaw": 100,
+    "Hufflepuff": 100,
+    "Slytherin": 0
+  },
+  "Tails": {
+    "Gryffindor": 100,
+    "Ravenclaw": 0,
+    "Hufflepuff": 0,
+    "Slytherin": 100
+  },
+  "Left": {
+    "Gryffindor": 0,
+    "Ravenclaw": 100,
+    "Hufflepuff": 0,
+    "Slytherin": 100
+  },
+  "Right": {
+    "Gryffindor": 100,
+    "Ravenclaw": 0,
+    "Hufflepuff": 100,
+    "Slytherin": 0
+  }
+}

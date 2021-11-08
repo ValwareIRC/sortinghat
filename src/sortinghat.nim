@@ -1,7 +1,7 @@
 import
   irc,
   ansi,
-  sorting
+  wizardinfo
 
 import
   os,
