@@ -323,7 +323,7 @@
     "Hufflepuff": 0,
     "Slytherin": 0
   },
-  "Worried about their mental health, and offer to call a doctor.": {
+  "Tell them that you are worried about their mental health, and offer to call a doctor.": {
     "Gryffindor": 0,
     "Ravenclaw": 0,
     "Hufflepuff": 100,
@@ -341,7 +341,7 @@
     "Hufflepuff": 0,
     "Slytherin": 0
   },
-  "Neither your friends nor your family have any idea who you are.": {
+  "Waking up to find that neither your friends nor your family have any idea who you are.": {
     "Gryffindor": 0,
     "Ravenclaw": 0,
     "Hufflepuff": 100,
@@ -635,37 +635,37 @@
     "Hufflepuff": 100,
     "Slytherin": 100
   },
-  "First, cure. Then student records. Finally, runes.": {
+  "First, a nearly perfected cure for dragon pox. Then student records going back 1000 years. Finally, a mysterious handwritten book full of strange runes.": {
     "Gryffindor": 100,
     "Ravenclaw": 0,
     "Hufflepuff": 100,
     "Slytherin": 0
   },
-  "First, student records. Then runes. Finally, cure.": {
+  "First, student records going back 1000 years. Then a mysterious handwritten book full of strange runes. Finally, a nearly perfected cure for dragon pox.": {
     "Gryffindor": 0,
     "Ravenclaw": 0,
     "Hufflepuff": 0,
     "Slytherin": 100
   },
-  "First, runes. Then cure. Finally, student records.": {
+  "First, a mysterious handwritten book full of strange runes. Then a nearly perfected cure for dragon pox. Finally, student records going back 1000 years.": {
     "Gryffindor": 0,
     "Ravenclaw": 100,
     "Hufflepuff": 0,
     "Slytherin": 0
   },
-  "First, cure. Then runes. Finally, student records.": {
+  "First, a nearly perfected cure for dragon pox. Then a mysterious handwritten book full of strange runes. Finally, student records going back 1000 years.": {
     "Gryffindor": 100,
     "Ravenclaw": 0,
     "Hufflepuff": 0,
     "Slytherin": 0
   },
-  "First student records. Then, cure. Finally, runes.": {
+"First student records going back 1000 years. Then, a nearly perfected cure for dragon pox. Finally, a mysterious handwritten book full of strange runes.": {
     "Gryffindor": 0,
     "Ravenclaw": 0,
     "Hufflepuff": 100,
     "Slytherin": 0
   },
-  "First,  runes. Then student records. Finally, cure. ": {
+  "First, a mysterious handwritten book full of strange runes. Then student records going back 1000 years. Finally, a nearly perfected cure for dragon pox.": {
     "Gryffindor": 0,
     "Ravenclaw": 100,
     "Hufflepuff": 0,

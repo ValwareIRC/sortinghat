@@ -21,7 +21,7 @@ type
   QuestionGroup = seq[Question]
   Quiz = object
     questions*: seq[QuestionGroup]
-  
+
   Points = ref object
     Gryffindor: float
     Hufflepuff: float
@@ -117,13 +117,21 @@ proc answerCurrentQuestion*(session: QuizSession, answerIndex: int) =
   session.currentQuestionIndex = -1
 
 when isMainModule:
-  let session = newHouseQuiz()
-  while not session.isFinished:
-    let question = session.getCurrentQuestion()
-    echo question.question
-    echo question.answers
-    session.answerCurrentQuestion(0)
-    echo ""
+  proc testAllAnswers(quiz: Quiz): seq[string] =
+    for questionGroup in quiz.questions:
+      for question in questionGroup:
+        for answer in question.answers:
+          var answered = false
+          for (key, points) in pointsLookup.pairs():
+            if answer.startsWith(key):
+              answered = true
+              break
+          if not answered:
+            result.add(answer)
 
-  echo session.determineHouse()
+
+  let unmatchedAnswers = testAllAnswers(houseQuiz)
+  for a in unmatchedAnswers:
+    echo a
+  assert unmatchedAnswers.len == 0
 
