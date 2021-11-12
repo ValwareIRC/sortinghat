@@ -9,7 +9,6 @@ import
 import
   os,
   nativesockets,
-  random,
   strutils,
   strformat
 
@@ -20,7 +19,7 @@ const helpText = [
   fmt"{clrRed}!wand [name] {clrDefault}(Get the wand of yourself or another wizard),",
 ].join(" ")
 
-let regexSingleNumber = re"^[0-9]$"
+let regexIntegerOnly = re"^[0-9]+$"
 
 var authPass: string
 
@@ -48,7 +47,7 @@ proc handleMsg(client: Irc, e: IrcEvent) =
     let message = e.text
     if message.startsWith('!'):
       client.handleCommand(e, message)
-    elif message.match(regexSingleNumber):
+    elif message.match(regexIntegerOnly):
       # User may be answering a quiz question.
       answerQuizQuestion(client, e, parseInt(message) - 1)
 
