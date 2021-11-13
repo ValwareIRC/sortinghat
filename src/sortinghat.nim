@@ -2,6 +2,7 @@ import
   irc,
   re,
   ansi,
+  houses,
   wizardinfo,
   quizsessions,
   sortingquiz
@@ -17,6 +18,10 @@ const helpText = [
   fmt"{clrRed}!quiz house {clrDefault}(Take a quiz),",
   fmt"{clrRed}!house [name] {clrDefault}(Get the house of yourself or another wizard),",
   fmt"{clrRed}!wand [name] {clrDefault}(Get the wand of yourself or another wizard),",
+  fmt"{clrRed}!g {clrDefault}(List students in the Gryffindor house),",
+  fmt"{clrRed}!h {clrDefault}(List students in the Hufflepuff house),",
+  fmt"{clrRed}!r {clrDefault}(List students in the Ravenclaw house),",
+  fmt"{clrRed}!s {clrDefault}(List students in the Slytherin house),",
 ].join(" ")
 
 let regexIntegerOnly = re"^[0-9]+$"
@@ -26,11 +31,15 @@ var authPass: string
 type
   FormattedResponse = string
   Commands = enum
-    cmdNone,
-    cmdHelp,
+    cmdNone
+    cmdHelp
     cmdQuiz
     cmdHouse
     cmdWand
+    cmdGryffindor
+    cmdHufflePuff
+    cmdRavenclaw
+    cmdSlytherin
 
 proc determineCommand(str: string): Commands
 proc handleCommand(client: Irc, e: IrcEvent, message: string)
@@ -53,7 +62,7 @@ proc handleMsg(client: Irc, e: IrcEvent) =
 
 proc determineCommand(str: string): Commands =
   case str:
-    of "help", "commands", "h":
+    of "help", "commands":
       cmdHelp
     of "quiz":
       cmdQuiz
@@ -61,6 +70,14 @@ proc determineCommand(str: string): Commands =
       cmdHouse
     of "wand":
       cmdWand
+    of "g":
+      cmdGryffindor
+    of "h":
+      cmdHufflePuff
+    of "r":
+      cmdRavenclaw
+    of "s":
+      cmdSlytherin
     else:
       cmdNone
 
@@ -129,6 +146,17 @@ proc answerQuizQuestion(client: Irc, e: IrcEvent, index: int) =
   except Exception as err:
     client.privmsg(e.origin, fmt"{clrRed}{err.msg}")
 
+template getHouseColor(house: House): Color =
+  case house:
+    of Gryffindor:
+      clrRed
+    of Hufflepuff:
+      clrYellow
+    of Ravenclaw:
+      clrBlue
+    of Slytherin:
+      clrGreen
+
 proc handleCommand(client: Irc, e: IrcEvent, message: string) =
   ## message:
   ##   The message to parse, e.g. !gh foobar
@@ -151,6 +179,20 @@ proc handleCommand(client: Irc, e: IrcEvent, message: string) =
     of cmdWand:
       let wand = retrieveWand(e, text)
       client.privmsg(e.origin, wand)
+    of cmdGryffindor, cmdHufflePuff, cmdRavenclaw, cmdSlytherin:
+      let
+        houseName = ($command)[3 .. ($command).high]
+        house = parseEnum[House](houseName)
+        wizards = getWizardsByHouse(house)
+        houseColor = getHouseColor(house)
+
+      if wizards.len == 0:
+        client.privmsg(e.origin, fmt"No wizards in house {houseColor}{houseName}")
+      else:
+        let
+          wizardsJoined = wizards.join(", ")
+          message = fmt"Wizards in house {houseColor}{house}: {wizardsJoined}"
+        client.privmsg(e.origin, message)
 
 when isMainModule:
   # TODO: Can make this all async probably.

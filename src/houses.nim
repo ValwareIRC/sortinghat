@@ -1,6 +1,10 @@
-import tables
+import
+  tables,
+  strutils
 
-export tables
+export
+  tables,
+  strutils
 
 type
   House* = enum

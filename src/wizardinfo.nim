@@ -30,6 +30,12 @@ proc getWizardByName*(name: string): WizardInfo =
     return wizardLookup[name]
   return nil
 
+proc getWizardsByHouse*(house: House): seq[string] =
+  for name, info in wizardLookup:
+    if info.fields.hasKey("house"):
+      if info.fields["house"] == $house:
+        result.add(name)
+
 proc wizardLookupStateToJson(): JsonNode =
   ## Saves current wizardLookup state to the current wizardInfoFile.
   result = newJObject()
