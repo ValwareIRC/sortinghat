@@ -98,7 +98,7 @@ proc answerCurrentQuestion*(session: QuizSession, answerIndex: int) =
 
   let answers = session.getCurrentQuestion().answers
   if answerIndex < 0 or answerIndex > answers.high:
-    raise newException(Exception, fmt"Answer index out of range - must be from 0 to {answers.high}.")
+    raise newException(Exception, fmt"Answer index out of range - must be from 1 to {answers.len}.")
   
   let answer = answers[answerIndex]
   var answered = false

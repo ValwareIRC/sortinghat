@@ -120,8 +120,10 @@ proc answerQuizQuestion(client: Irc, e: IrcEvent, index: int) =
     if session != nil:
       session.answerCurrentQuestion(index)
       if session.isFinished:
-        client.privmsg(e.origin, fmt"{e.nick} has been placed in House {$session.determineHouse()}!")
+        let house = $session.determineHouse()
+        client.privmsg(e.origin, fmt"{e.nick} has been placed in House {house}!")
         closeQuiz(e.nick)
+        saveWizardHouse(e.nick, house)
       else:
         client.sendNextQuizQuestion(e, e.nick)
   except Exception as err:
@@ -152,7 +154,7 @@ proc handleCommand(client: Irc, e: IrcEvent, message: string) =
 
 when isMainModule:
   # TODO: Can make this all async probably.
-  let wizardsFile = getEnv("WIZARDS_FILE", "./wizards.toml")
+  let wizardsFile = getEnv("WIZARDS_FILE", "./wizards.json")
   echo "LOADING WIZARDS FROM ", wizardsFile
   loadWizardInfo(wizardsFile)
   echo "LOADED ", wizardLookup.len, " WIZARDS"

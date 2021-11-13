@@ -1,0 +1,15 @@
+{
+  "wizards": [
+    {
+      "Prestige": {
+        "house": "Slytherin",
+        "wand": "Elm wood with a unicorn hair core, 10 ¾ inch and hard flexibility"
+      }
+    },
+    {
+      "f": {
+        "house": "Ravenclaw"
+      }
+    }
+  ]
+}
