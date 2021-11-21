@@ -172,7 +172,12 @@ proc handleCommand(client: Irc, e: IrcEvent, message: string) =
     of cmdHelp:
       client.privmsg(e.origin, helpText)
     of cmdQuiz:
-      client.handleQuiz(e, text)
+      let wizardInfo = getWizardByName(e.nick)
+      if wizardInfo != nil and wizardInfo.fields.hasKey("house"):
+        let house = wizardInfo.fields["house"]
+        client.privmsg(e.origin, fmt"{e.nick} is already in house {house}")
+      else:
+        client.handleQuiz(e, text)
     of cmdHouse:
       let house = retrieveHouse(e, text)
       client.privmsg(e.origin, house)
