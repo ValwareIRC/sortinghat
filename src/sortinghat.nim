@@ -30,6 +30,7 @@ let
 
 
 var authPass: string
+var relayBot: string
 
 type
   FormattedResponse = string
@@ -51,7 +52,7 @@ proc answerQuizQuestion(client: Irc, e: IrcEvent, nick: string, index: int)
 
 proc handleMsg(client: Irc, e: IrcEvent) =
   echo e.raw
-  if e.text == "If you do not change within 1 minute, I will change your nick." and authPass.len > 0:
+  if e.text == "If you do not change within 1 minute, I will change your nick." and authPass.len > 0 and e.nick == "NickServ":
     client.privmsg("NickServ", fmt"IDENTIFY {authPass}")
 
   if e.cmd == MPrivMsg:
@@ -59,7 +60,7 @@ proc handleMsg(client: Irc, e: IrcEvent) =
       nick = e.nick
       message = e.text
 
-    if e.text.match(isBotUserCommandRegex):
+    if e.text.match(isBotUserCommandRegex) and nick == relayBot:
       let split = e.text.split("> ", 1)
       nick = split[0][1..^1]
       message = split[1]
